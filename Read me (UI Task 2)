@@ -1,0 +1,61 @@
+Hello I'm Mostafa Alsaddek 
+=========================
+I create this new application to use CSV file that contain the test data, as after spending many hours I can not make the Scenario outline read the CSV file
+So I make one step in feature file then read the CSV inside the Step Definition file, so it's consider as one TC
+in the main task I use scenario outline with example, each example act as different scenario.
+=========================
+
+In this project, I use Eclipse, Java, Cucumber, and JUnit runner.
+I develop this framework in Page Object Model
+
+I make Login scenarios
+I implement 4 TCs like to show different messages per each case of inputs.
+
+
+ProjectName(LoginSauceDemoCSV)/
+│
+├── src/
+│   ├── main/
+│   │   ── java/
+│   │      └── configuration/    <-- Contain configuration file
+│   │      └── pageFiles/        <-- Contains all Page Classes
+│   │      └── stepsDef/         <-- Contains step definition file classes
+│   │   
+│   └── test/
+│       └── java/
+│           └── featureFiles/    <-- Contains cucumber feature files
+│           └── resources/       <-- Contains drivers exe and the CSV data file
+│           └── runner/          <-- Contains Junit runner file
+├── target/
+│   ├── cucumber-reports/        <-- Contains Report after running the Test 
+│
+├── pom.xml (for dependencies)
+└── README
+
+You can get the feature file in (src/test/java/featureFiles/Login.feature)
+	
+I make a static wait of 3 seconds in the last step of each scenario before closing the window to notice the end of each scenario.
+
+I create a configuration file that contains the website URL, the Test Data File Path, and the Driver location for Chrome and firefox, my code select the driver based on Driver value here.
+
+As this is a POM, I create a class for each page of the application. in this case one class for one page Login page
+each class contain the page elements and the action on these elements, so I can use them in test cases
+You can find them in pages package (src/main/java/pageFiles) 
+
+As this is a Cucumber I create the step definition file in sdFiles package (src/main/java/stepsDef) that contains the actions for each command in the feature file.
+
+I use a local report after each run in HTML, you can find the test report in (target\cucumber-reports\cucumber-html-report.html)
+========================================================================
+
+To run this application you need to import the project to Eclipse then Go to the Runner file (src/test/java/runner/RunnerFile.java) then run as "JUnit Test"
+-------------------------------
+I attach "chromedriver" and "geckodriver" to this project in resources package (src/test/java/resources)
+-------------------------------
+Note: I use Windows and Eclipse IDE for Java Developers Version: 2024-09 (4.33.0)
+
+-------------------------------
+-------------
+-------------
+Mostafa Alsaddek
++201027062028
+mos.yossry.cufe@gmail.com
